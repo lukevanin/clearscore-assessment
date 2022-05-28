@@ -126,6 +126,7 @@
 		FCFBFA74284273F2009B13A7 /* ToastModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModuleBuilder.swift; sourceTree = "<group>"; };
 		FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModuleBuilder.swift; sourceTree = "<group>"; };
 		FCFBFA78284276DE009B13A7 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
+		FCFBFA7B28429F20009B13A7 /* score-light-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "score-light-portrait.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBFA6B28426461009B13A7 /* README.md */,
+				FCFBFA7A28429F0A009B13A7 /* Screenshots */,
 				FCFBF9E028422EF4009B13A7 /* ClearScore */,
 				FCFBF9F728422EF6009B13A7 /* ClearScoreTests */,
 				FCFBFA0128422EF6009B13A7 /* ClearScoreUITests */,
@@ -220,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBFA2228422F23009B13A7 /* App */,
-				FCFBFA6828425E75009B13A7 /* Protocols */,
+				FCFBFA6828425E75009B13A7 /* Interfaces */,
 				FCFBFA1428422F23009B13A7 /* Builder */,
 				FCFBFA2728422F23009B13A7 /* ViewController */,
 				FCFBFA3228422F23009B13A7 /* View */,
@@ -265,7 +267,6 @@
 		FCFBFA2528422F23009B13A7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
 				FCFBFA2628422F23009B13A7 /* HTTP.swift */,
 			);
 			path = Networking;
@@ -323,13 +324,14 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		FCFBFA6828425E75009B13A7 /* Protocols */ = {
+		FCFBFA6828425E75009B13A7 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */,
 				FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */,
+				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
 			);
-			path = Protocols;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		FCFBFA69284260D3009B13A7 /* Module Builder */ = {
@@ -353,6 +355,14 @@
 				FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */,
 			);
 			path = "Environment Builder";
+			sourceTree = "<group>";
+		};
+		FCFBFA7A28429F0A009B13A7 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA7B28429F20009B13A7 /* score-light-portrait.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

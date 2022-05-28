@@ -1,5 +1,8 @@
 import UIKit
 
+///
+/// Displays a caption / label in a horizontal format. Used by the `InfoViewController` component 
+///
 final class InfoItemView: UIView {
     
     var caption: String? {
