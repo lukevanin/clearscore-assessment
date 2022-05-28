@@ -9,13 +9,40 @@
 /* Begin PBXBuildFile section */
 		FCFBF9E228422EF4009B13A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */; };
 		FCFBF9E428422EF4009B13A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */; };
-		FCFBF9E628422EF4009B13A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBF9E528422EF4009B13A7 /* ViewController.swift */; };
-		FCFBF9E928422EF4009B13A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCFBF9E728422EF4009B13A7 /* Main.storyboard */; };
 		FCFBF9EB28422EF5009B13A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFBF9EA28422EF5009B13A7 /* Assets.xcassets */; };
 		FCFBF9EE28422EF5009B13A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCFBF9EC28422EF5009B13A7 /* LaunchScreen.storyboard */; };
 		FCFBF9F928422EF6009B13A7 /* ClearScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBF9F828422EF6009B13A7 /* ClearScoreTests.swift */; };
 		FCFBFA0328422EF6009B13A7 /* ClearScoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA0228422EF6009B13A7 /* ClearScoreUITests.swift */; };
 		FCFBFA0528422EF6009B13A7 /* ClearScoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA0428422EF6009B13A7 /* ClearScoreUITestsLaunchTests.swift */; };
+		FCFBFA3628422F23009B13A7 /* LoadingModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1528422F23009B13A7 /* LoadingModuleBuilder.swift */; };
+		FCFBFA3728422F23009B13A7 /* LongTermDebtModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1628422F23009B13A7 /* LongTermDebtModuleBuilder.swift */; };
+		FCFBFA3828422F23009B13A7 /* ReportModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1728422F23009B13A7 /* ReportModuleBuilder.swift */; };
+		FCFBFA3928422F23009B13A7 /* ProductionEnvironmentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1828422F23009B13A7 /* ProductionEnvironmentBuilder.swift */; };
+		FCFBFA3A28422F23009B13A7 /* ScoreModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1928422F23009B13A7 /* ScoreModuleBuilder.swift */; };
+		FCFBFA3B28422F23009B13A7 /* BuilderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */; };
+		FCFBFA3C28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1B28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift */; };
+		FCFBFA3D28422F23009B13A7 /* TestEnvironmentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */; };
+		FCFBFA3E28422F23009B13A7 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1E28422F23009B13A7 /* Percentage.swift */; };
+		FCFBFA3F28422F23009B13A7 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA1F28422F23009B13A7 /* Currency.swift */; };
+		FCFBFA4028422F23009B13A7 /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2028422F23009B13A7 /* ApplicationConfiguration.swift */; };
+		FCFBFA4128422F23009B13A7 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2128422F23009B13A7 /* ScoreModel.swift */; };
+		FCFBFA4228422F23009B13A7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2328422F23009B13A7 /* Environment.swift */; };
+		FCFBFA4428422F23009B13A7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2628422F23009B13A7 /* HTTP.swift */; };
+		FCFBFA4528422F23009B13A7 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */; };
+		FCFBFA4628422F23009B13A7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2928422F23009B13A7 /* ReportViewController.swift */; };
+		FCFBFA4728422F23009B13A7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */; };
+		FCFBFA4828422F23009B13A7 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2B28422F23009B13A7 /* LoadingViewController.swift */; };
+		FCFBFA4928422F23009B13A7 /* ScoreWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2D28422F23009B13A7 /* ScoreWebRepository.swift */; };
+		FCFBFA4A28422F23009B13A7 /* MockScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2E28422F23009B13A7 /* MockScoreRepository.swift */; };
+		FCFBFA4B28422F23009B13A7 /* RepositoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */; };
+		FCFBFA4D28422F23009B13A7 /* InfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA3328422F23009B13A7 /* InfoItemView.swift */; };
+		FCFBFA4E28422F23009B13A7 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA3428422F23009B13A7 /* ArcView.swift */; };
+		FCFBFA4F28422F23009B13A7 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA3528422F23009B13A7 /* VideoView.swift */; };
+		FCFBFA5428422FE3009B13A7 /* Configuration-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5028422FDF009B13A7 /* Configuration-debug.plist */; };
+		FCFBFA5528422FE3009B13A7 /* background-0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5128422FE2009B13A7 /* background-0.mp4 */; };
+		FCFBFA5628422FE3009B13A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5228422FE2009B13A7 /* Localizable.strings */; };
+		FCFBFA5728422FE3009B13A7 /* background-1.mov in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5328422FE3009B13A7 /* background-1.mov */; };
+		FCFBFA5928422FF4009B13A7 /* Configuration-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5828422FF4009B13A7 /* Configuration-release.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +66,6 @@
 		FCFBF9DE28422EF4009B13A7 /* ClearScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FCFBF9E528422EF4009B13A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCFBF9E828422EF4009B13A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCFBF9EA28422EF5009B13A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCFBF9ED28422EF5009B13A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCFBF9EF28422EF5009B13A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +74,35 @@
 		FCFBF9FE28422EF6009B13A7 /* ClearScoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClearScoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFBFA0228422EF6009B13A7 /* ClearScoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScoreUITests.swift; sourceTree = "<group>"; };
 		FCFBFA0428422EF6009B13A7 /* ClearScoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCFBFA1528422F23009B13A7 /* LoadingModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1628422F23009B13A7 /* LongTermDebtModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongTermDebtModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1728422F23009B13A7 /* ReportModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1828422F23009B13A7 /* ProductionEnvironmentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionEnvironmentBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1928422F23009B13A7 /* ScoreModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderProtocols.swift; sourceTree = "<group>"; };
+		FCFBFA1B28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortTermDebtModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEnvironmentBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA1E28422F23009B13A7 /* Percentage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
+		FCFBFA1F28422F23009B13A7 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		FCFBFA2028422F23009B13A7 /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
+		FCFBFA2128422F23009B13A7 /* ScoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		FCFBFA2328422F23009B13A7 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FCFBFA2628422F23009B13A7 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		FCFBFA2928422F23009B13A7 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		FCFBFA2B28422F23009B13A7 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FCFBFA2D28422F23009B13A7 /* ScoreWebRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreWebRepository.swift; sourceTree = "<group>"; };
+		FCFBFA2E28422F23009B13A7 /* MockScoreRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockScoreRepository.swift; sourceTree = "<group>"; };
+		FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryProtocols.swift; sourceTree = "<group>"; };
+		FCFBFA3328422F23009B13A7 /* InfoItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoItemView.swift; sourceTree = "<group>"; };
+		FCFBFA3428422F23009B13A7 /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
+		FCFBFA3528422F23009B13A7 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		FCFBFA5028422FDF009B13A7 /* Configuration-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Configuration-debug.plist"; sourceTree = "<group>"; };
+		FCFBFA5128422FE2009B13A7 /* background-0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-0.mp4"; sourceTree = "<group>"; };
+		FCFBFA5228422FE2009B13A7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FCFBFA5328422FE3009B13A7 /* background-1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "background-1.mov"; sourceTree = "<group>"; };
+		FCFBFA5828422FF4009B13A7 /* Configuration-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Configuration-release.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +153,10 @@
 		FCFBF9E028422EF4009B13A7 /* ClearScore */ = {
 			isa = PBXGroup;
 			children = (
+				FCFBFA1328422F0D009B13A7 /* Source */,
+				FCFBFA1128422EFB009B13A7 /* Resources */,
 				FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */,
 				FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */,
-				FCFBF9E528422EF4009B13A7 /* ViewController.swift */,
-				FCFBF9E728422EF4009B13A7 /* Main.storyboard */,
-				FCFBF9EA28422EF5009B13A7 /* Assets.xcassets */,
-				FCFBF9EC28422EF5009B13A7 /* LaunchScreen.storyboard */,
-				FCFBF9EF28422EF5009B13A7 /* Info.plist */,
 			);
 			path = ClearScore;
 			sourceTree = "<group>";
@@ -125,6 +176,108 @@
 				FCFBFA0428422EF6009B13A7 /* ClearScoreUITestsLaunchTests.swift */,
 			);
 			path = ClearScoreUITests;
+			sourceTree = "<group>";
+		};
+		FCFBFA1128422EFB009B13A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA5128422FE2009B13A7 /* background-0.mp4 */,
+				FCFBFA5328422FE3009B13A7 /* background-1.mov */,
+				FCFBFA5028422FDF009B13A7 /* Configuration-debug.plist */,
+				FCFBFA5828422FF4009B13A7 /* Configuration-release.plist */,
+				FCFBFA5228422FE2009B13A7 /* Localizable.strings */,
+				FCFBF9EA28422EF5009B13A7 /* Assets.xcassets */,
+				FCFBF9EC28422EF5009B13A7 /* LaunchScreen.storyboard */,
+				FCFBF9EF28422EF5009B13A7 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FCFBFA1328422F0D009B13A7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA2228422F23009B13A7 /* App */,
+				FCFBFA1428422F23009B13A7 /* Builder */,
+				FCFBFA1D28422F23009B13A7 /* Model */,
+				FCFBFA2528422F23009B13A7 /* Networking */,
+				FCFBFA2C28422F23009B13A7 /* Repository */,
+				FCFBFA3228422F23009B13A7 /* View */,
+				FCFBFA2728422F23009B13A7 /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FCFBFA1428422F23009B13A7 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA1528422F23009B13A7 /* LoadingModuleBuilder.swift */,
+				FCFBFA1628422F23009B13A7 /* LongTermDebtModuleBuilder.swift */,
+				FCFBFA1728422F23009B13A7 /* ReportModuleBuilder.swift */,
+				FCFBFA1828422F23009B13A7 /* ProductionEnvironmentBuilder.swift */,
+				FCFBFA1928422F23009B13A7 /* ScoreModuleBuilder.swift */,
+				FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */,
+				FCFBFA1B28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift */,
+				FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		FCFBFA1D28422F23009B13A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA1E28422F23009B13A7 /* Percentage.swift */,
+				FCFBFA1F28422F23009B13A7 /* Currency.swift */,
+				FCFBFA2028422F23009B13A7 /* ApplicationConfiguration.swift */,
+				FCFBFA2128422F23009B13A7 /* ScoreModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCFBFA2228422F23009B13A7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA2328422F23009B13A7 /* Environment.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FCFBFA2528422F23009B13A7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA2628422F23009B13A7 /* HTTP.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FCFBFA2728422F23009B13A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */,
+				FCFBFA2928422F23009B13A7 /* ReportViewController.swift */,
+				FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */,
+				FCFBFA2B28422F23009B13A7 /* LoadingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FCFBFA2C28422F23009B13A7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA2D28422F23009B13A7 /* ScoreWebRepository.swift */,
+				FCFBFA2E28422F23009B13A7 /* MockScoreRepository.swift */,
+				FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FCFBFA3228422F23009B13A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA3328422F23009B13A7 /* InfoItemView.swift */,
+				FCFBFA3428422F23009B13A7 /* ArcView.swift */,
+				FCFBFA3528422F23009B13A7 /* VideoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +384,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFBFA5528422FE3009B13A7 /* background-0.mp4 in Resources */,
+				FCFBFA5628422FE3009B13A7 /* Localizable.strings in Resources */,
 				FCFBF9EE28422EF5009B13A7 /* LaunchScreen.storyboard in Resources */,
 				FCFBF9EB28422EF5009B13A7 /* Assets.xcassets in Resources */,
-				FCFBF9E928422EF4009B13A7 /* Main.storyboard in Resources */,
+				FCFBFA5428422FE3009B13A7 /* Configuration-debug.plist in Resources */,
+				FCFBFA5728422FE3009B13A7 /* background-1.mov in Resources */,
+				FCFBFA5928422FF4009B13A7 /* Configuration-release.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +415,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCFBF9E628422EF4009B13A7 /* ViewController.swift in Sources */,
+				FCFBFA4128422F23009B13A7 /* ScoreModel.swift in Sources */,
+				FCFBFA4F28422F23009B13A7 /* VideoView.swift in Sources */,
+				FCFBFA4228422F23009B13A7 /* Environment.swift in Sources */,
+				FCFBFA4528422F23009B13A7 /* ScoreViewController.swift in Sources */,
+				FCFBFA3C28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift in Sources */,
+				FCFBFA4E28422F23009B13A7 /* ArcView.swift in Sources */,
+				FCFBFA3928422F23009B13A7 /* ProductionEnvironmentBuilder.swift in Sources */,
+				FCFBFA3628422F23009B13A7 /* LoadingModuleBuilder.swift in Sources */,
 				FCFBF9E228422EF4009B13A7 /* AppDelegate.swift in Sources */,
+				FCFBFA4928422F23009B13A7 /* ScoreWebRepository.swift in Sources */,
+				FCFBFA4628422F23009B13A7 /* ReportViewController.swift in Sources */,
+				FCFBFA4A28422F23009B13A7 /* MockScoreRepository.swift in Sources */,
+				FCFBFA3E28422F23009B13A7 /* Percentage.swift in Sources */,
+				FCFBFA4728422F23009B13A7 /* InfoViewController.swift in Sources */,
+				FCFBFA3A28422F23009B13A7 /* ScoreModuleBuilder.swift in Sources */,
+				FCFBFA4428422F23009B13A7 /* HTTP.swift in Sources */,
+				FCFBFA3828422F23009B13A7 /* ReportModuleBuilder.swift in Sources */,
+				FCFBFA4D28422F23009B13A7 /* InfoItemView.swift in Sources */,
+				FCFBFA3F28422F23009B13A7 /* Currency.swift in Sources */,
+				FCFBFA4028422F23009B13A7 /* ApplicationConfiguration.swift in Sources */,
+				FCFBFA3728422F23009B13A7 /* LongTermDebtModuleBuilder.swift in Sources */,
+				FCFBFA3D28422F23009B13A7 /* TestEnvironmentBuilder.swift in Sources */,
+				FCFBFA3B28422F23009B13A7 /* BuilderProtocols.swift in Sources */,
+				FCFBFA4828422F23009B13A7 /* LoadingViewController.swift in Sources */,
+				FCFBFA4B28422F23009B13A7 /* RepositoryProtocols.swift in Sources */,
 				FCFBF9E428422EF4009B13A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +477,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCFBF9E728422EF4009B13A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCFBF9E828422EF4009B13A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCFBF9EC28422EF5009B13A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +616,8 @@
 				INFOPLIST_FILE = ClearScore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +645,8 @@
 				INFOPLIST_FILE = ClearScore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

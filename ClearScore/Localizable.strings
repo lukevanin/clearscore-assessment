@@ -1,0 +1,14 @@
+"credit-score-prompt" = "Your credit score is";
+"credit-score-range" = "Out of %@";
+
+"short-term-credit-title" = "Short Term Credit";
+"short-term-debt" = "Short term debt";
+"short-term-credit-limit" = "Short term credit limit";
+"short-term-credit-utilization" = "Credit usage";
+"short-term-debt-change" = "Short term debt change";
+
+"long-term-credit-title" = "Long Term Credit";
+"long-term-debt" = "Long term debt";
+"long-term-credit-limit" = "Long term credit limit";
+"long-term-credit-utilization" = "Credit usage";
+"long-term-debt-change" = "Long term debt change";

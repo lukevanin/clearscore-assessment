@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ClearScore
-//
-//  Created by Luke Van In on 2022/05/28.
-//
-
 import UIKit
 
 @main

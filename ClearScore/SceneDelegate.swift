@@ -1,22 +1,51 @@
-//
-//  SceneDelegate.swift
-//  ClearScore
-//
-//  Created by Luke Van In on 2022/05/28.
-//
-
 import UIKit
+import OSLog
+
+private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "scene-delegate")
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        let configurationURL: URL
+        let viewController: UIViewController
+        
+        #if DEBUG
+        configurationURL = Bundle.main.url(forResource: "Configuration-debug", withExtension: "plist")!
+        #else
+        configurationURL = Bundle.main.url(forResource: "Configuration-release", withExtension: "plist")!
+        #endif
+        
+        do {
+            let environment = TestEnvironmentBuilder().build()
+            let builder = LoadingModuleBuilder(
+                module: ReportModuleBuilder(
+                    modules: [
+                        ScoreModuleBuilder(),
+                        ShortTermCreditInfoModuleBuilder(),
+                        LongTermCreditInfoModuleBuilder(),
+                    ]
+                )
+            )
+//            let builder = ApplicationBuilder<ScoreModuleBuilder>(environment: environment)
+            //            let builder = try ApplicationBuilder<ScoreModuleBuilder>(configurationURL: configurationURL)
+            viewController = try builder.build(environment: environment)
+        }
+        catch {
+            logger.critical("Cannot instantiate initial application view controller. \(error.localizedDescription)")
+            return
+        }
+        
+        window = UIWindow(windowScene: scene)
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+        logger.debug("App initialized")
+        return
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

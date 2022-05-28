@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/</string>
+	<key>endpoints</key>
+	<dict>
+		<key>creditScore</key>
+		<string>mockcredit/values</string>
+	</dict>
+</dict>
+</plist>
