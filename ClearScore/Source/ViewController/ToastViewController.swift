@@ -1,16 +1,28 @@
 import UIKit
 import Combine
 
-
+///
+/// Displays a popup message or "toast" when a `UserMessage` is received from the provided publisher. The toast disappears again after a time.
+///
+///
 final class ToastViewController: AbstractViewModelViewController<UserMessage> {
 
+    ///
+    /// Abstract state which all view states must inherit from.
+    ///
     private class ToastViewState {
         unowned var context: ToastViewController!
         func enter() { }
         func showNextToast() { }
     }
 
+    ///
+    /// View state when the toast popup is not visible.
+    ///
     private final class HiddenToastViewState: ToastViewState {
+        ///
+        /// Displays the next user message in the queue.
+        ///
         override func showNextToast() {
             guard context.queue.count > 0 else {
                 return
@@ -20,6 +32,9 @@ final class ToastViewController: AbstractViewModelViewController<UserMessage> {
         }
     }
 
+    ///
+    /// View state while the popup toast is being animated off-screen.
+    ///
     private final class HidingToastViewState: ToastViewState {
         override func enter() {
             context.cardVisibleConstraint.isActive = false
@@ -39,6 +54,9 @@ final class ToastViewController: AbstractViewModelViewController<UserMessage> {
         }
     }
 
+    ///
+    /// View state while the popup toast is being animated on-screen.
+    ///
     private final class ShowingToastViewState: ToastViewState {
         private let toast: UserMessage
         
@@ -65,6 +83,9 @@ final class ToastViewController: AbstractViewModelViewController<UserMessage> {
         }
     }
 
+    ///
+    /// View state when the popup toast is visible and not animating.
+    ///
     private final class VisibleToastViewState: ToastViewState {
         
         override func enter() {
@@ -118,42 +139,19 @@ final class ToastViewController: AbstractViewModelViewController<UserMessage> {
         cardView.contentView.addSubview(messageLabel)
         view.addSubview(cardView)
         
-        cardVisibleConstraint = cardView.bottomAnchor.constraint(
-            equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-            constant: -32
-        )
-        cardHiddenConstraint = cardView.topAnchor.constraint(
-            equalTo: view.bottomAnchor
-        )
+        cardVisibleConstraint = (cardView.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor) - 32
+        cardHiddenConstraint = (cardView.topAnchor == view.bottomAnchor)
 
-        NSLayoutConstraint.activate([
-            cardView.leftAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.leftAnchor,
-                constant: 32
-            ),
-            cardView.rightAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.rightAnchor,
-                constant: -32
-            ),
-            cardHiddenConstraint,
+        constraints {
+            (cardView.leftAnchor == view.safeAreaLayoutGuide.leftAnchor) + 32
+            (cardView.rightAnchor == view.safeAreaLayoutGuide.rightAnchor) - 32
+            cardHiddenConstraint!
             
-            messageLabel.leftAnchor.constraint(
-                equalTo: cardView.leftAnchor,
-                constant: 32
-            ),
-            messageLabel.rightAnchor.constraint(
-                equalTo: cardView.rightAnchor,
-                constant: -32
-            ),
-            messageLabel.topAnchor.constraint(
-                equalTo: cardView.topAnchor,
-                constant: 32
-            ),
-            messageLabel.bottomAnchor.constraint(
-                equalTo: cardView.bottomAnchor,
-                constant: -32
-            ),
-        ])
+            (messageLabel.leftAnchor == cardView.leftAnchor) + 32
+            (messageLabel.rightAnchor == cardView.rightAnchor) - 32
+            (messageLabel.topAnchor == cardView.topAnchor) + 32
+            (messageLabel.bottomAnchor == cardView.bottomAnchor) - 32
+        }
         
         setViewState(HiddenToastViewState())
     }

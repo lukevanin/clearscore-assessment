@@ -1,5 +1,10 @@
 import UIKit
 
+///
+/// Displays a translucent rectangle with a blurred background effect, vibrant foreground effect, and rounded corners.
+///
+/// - warning: Subviews should be added to the`contentView` subview, and should not be added to the `CardView` directly.
+///
 final class CardView: UIView {
     
     var contentView: UIView {

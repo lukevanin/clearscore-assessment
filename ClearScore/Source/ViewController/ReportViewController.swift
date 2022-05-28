@@ -101,84 +101,36 @@ final class ReportViewController: UIViewController {
         scrollView.delegate = self
         scrollView.refreshControl = refreshControl
         
-        NSLayoutConstraint.activate([
-            backgroundView.leftAnchor.constraint(
-                equalTo: view.leftAnchor
-            ),
-            backgroundView.rightAnchor.constraint(
-                equalTo: view.rightAnchor
-            ),
-            backgroundView.topAnchor.constraint(
-                equalTo: view.topAnchor
-            ),
-            backgroundView.bottomAnchor.constraint(
-                equalTo: view.bottomAnchor
-            ),
+        constraints {
+            backgroundView.leftAnchor == view.leftAnchor
+            backgroundView.rightAnchor == view.rightAnchor
+            backgroundView.topAnchor == view.topAnchor
+            backgroundView.bottomAnchor == view.bottomAnchor
 
-            backgroundBlurView.leftAnchor.constraint(
-                equalTo: backgroundView.leftAnchor
-            ),
-            backgroundBlurView.rightAnchor.constraint(
-                equalTo: backgroundView.rightAnchor
-            ),
-            backgroundBlurView.topAnchor.constraint(
-                equalTo: backgroundView.topAnchor
-            ),
-            backgroundBlurView.bottomAnchor.constraint(
-                equalTo: backgroundView.bottomAnchor
-            ),
+            backgroundBlurView.leftAnchor == backgroundView.leftAnchor
+            backgroundBlurView.rightAnchor == backgroundView.rightAnchor
+            backgroundBlurView.topAnchor == backgroundView.topAnchor
+            backgroundBlurView.bottomAnchor == backgroundView.bottomAnchor
 
-            scrollView.leftAnchor.constraint(
-                equalTo: view.leftAnchor
-            ),
-            scrollView.rightAnchor.constraint(
-                equalTo: view.rightAnchor
-            ),
-            scrollView.topAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.topAnchor
-            ),
-            scrollView.bottomAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.bottomAnchor
-            ),
+            scrollView.leftAnchor == view.leftAnchor
+            scrollView.rightAnchor == view.rightAnchor
+            scrollView.topAnchor == view.safeAreaLayoutGuide.topAnchor
+            scrollView.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor
 
-            layoutView.widthAnchor.constraint(
-                equalTo: view.widthAnchor
-            ),
-            layoutView.leftAnchor.constraint(
-                equalTo: scrollView.leftAnchor
-            ),
-            layoutView.rightAnchor.constraint(
-                equalTo: scrollView.rightAnchor
-            ),
-            layoutView.topAnchor.constraint(
-                equalTo: scrollView.topAnchor
-            ),
-            layoutView.bottomAnchor.constraint(
-                equalTo: scrollView.bottomAnchor
-            ),
-            
-            upIconImageView.widthAnchor.constraint(
-                equalToConstant: 40
-            ),
-            upIconImageView.centerXAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.centerXAnchor
-            ),
-            upIconImageView.topAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.topAnchor,
-                constant: 16
-            ),
-            
-            downIconImageView.widthAnchor.constraint(
-                equalToConstant: 40
-            ),
-            downIconImageView.centerXAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.centerXAnchor
-            ),
-            downIconImageView.bottomAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                constant: -16
-            ),
-        ])
+            layoutView.widthAnchor == view.widthAnchor
+            layoutView.leftAnchor == scrollView.leftAnchor
+            layoutView.rightAnchor == scrollView.rightAnchor
+            layoutView.topAnchor == scrollView.topAnchor
+            layoutView.bottomAnchor == scrollView.bottomAnchor
+
+            upIconImageView.widthAnchor == 40
+            upIconImageView.centerXAnchor == view.safeAreaLayoutGuide.centerXAnchor
+            (upIconImageView.topAnchor == view.safeAreaLayoutGuide.topAnchor) + 16
+
+            downIconImageView.widthAnchor == 40
+            downIconImageView.centerXAnchor == view.safeAreaLayoutGuide.centerXAnchor
+            (downIconImageView.bottomAnchor == view.safeAreaLayoutGuide.bottomAnchor) - 16
+        }
         
         viewControllers.forEach { viewController in
             viewController.willMove(toParent: self)

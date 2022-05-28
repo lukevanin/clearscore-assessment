@@ -96,13 +96,13 @@ final class ScoreModel {
             ),
             shortTermCredit: ScoreInfo.Credit(
                 debt: data.creditReportInfo.currentShortTermDebt.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 limit: data.creditReportInfo.currentShortTermCreditLimit.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 change: data.creditReportInfo.changeInShortTermDebt.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 usage: data.creditReportInfo.currentShortTermCreditUtilisation.map {
                     Percentage(value: $0)
@@ -110,13 +110,13 @@ final class ScoreModel {
             ),
             longTermCredit: ScoreInfo.Credit(
                 debt: data.creditReportInfo.currentLongTermDebt.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 limit: data.creditReportInfo.currentLongTermCreditLimit.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 change: data.creditReportInfo.changeInLongTermDebt.map {
-                    Money(currency: currency, amount: $0)
+                    Money(currency: currency, amount: $0, denomination: 100)
                 },
                 usage: data.creditReportInfo.currentLongTermCreditUtilisation.map {
                     Percentage(value: $0)

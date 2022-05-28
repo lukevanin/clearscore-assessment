@@ -93,74 +93,31 @@ final class ScoreViewController: UIViewController {
         view.addSubview(cardView)
         view.addSubview(scoreIndicatorView)
 
-        NSLayoutConstraint.activate([
+        constraints {
+            (cardView.leftAnchor == view.safeAreaLayoutGuide.leftAnchor) + 32
+            (cardView.rightAnchor == view.safeAreaLayoutGuide.rightAnchor) - 32
+            (cardView.centerYAnchor == view.safeAreaLayoutGuide.centerYAnchor)
+            (cardView.heightAnchor == cardView.widthAnchor)  * 1.3
+
+            scoreTrackView.centerXAnchor == cardView.centerXAnchor
+            scoreTrackView.centerYAnchor == cardView.centerYAnchor
+            scoreTrackView.widthAnchor == 250
+            scoreTrackView.heightAnchor == scoreIndicatorView.widthAnchor
+
+            scoreIndicatorView.centerXAnchor == scoreTrackView.centerXAnchor
+            scoreIndicatorView.centerYAnchor == scoreTrackView.centerYAnchor
+            scoreIndicatorView.widthAnchor == scoreTrackView.widthAnchor
+            scoreIndicatorView.heightAnchor == scoreTrackView.heightAnchor
+
+            scoreLabel.centerXAnchor == cardView.centerXAnchor
+            scoreLabel.centerYAnchor == cardView.centerYAnchor
             
-            cardView.leftAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.leftAnchor,
-                constant: +32
-            ),
-            cardView.rightAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.rightAnchor,
-                constant: -32
-            ),
-            cardView.centerYAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.centerYAnchor
-            ),
-            cardView.heightAnchor.constraint(
-                equalTo: cardView.widthAnchor,
-                multiplier: 1.3
-            ),
-
-            scoreTrackView.centerXAnchor.constraint(
-                equalTo: cardView.centerXAnchor
-            ),
-            scoreTrackView.centerYAnchor.constraint(
-                equalTo: cardView.centerYAnchor
-            ),
-            scoreTrackView.widthAnchor.constraint(
-                equalToConstant: 250
-            ),
-            scoreTrackView.heightAnchor.constraint(
-                equalTo: scoreIndicatorView.widthAnchor
-            ),
-
-            scoreIndicatorView.centerXAnchor.constraint(
-                equalTo: scoreTrackView.centerXAnchor
-            ),
-            scoreIndicatorView.centerYAnchor.constraint(
-                equalTo: scoreTrackView.centerYAnchor
-            ),
-            scoreIndicatorView.widthAnchor.constraint(
-                equalTo: scoreTrackView.widthAnchor
-            ),
-            scoreIndicatorView.heightAnchor.constraint(
-                equalTo: scoreTrackView.heightAnchor
-            ),
-
-            scoreLabel.centerXAnchor.constraint(
-                equalTo: cardView.centerXAnchor
-            ),
-            scoreLabel.centerYAnchor.constraint(
-                equalTo: cardView.centerYAnchor
-            ),
+            scorePromptLabel.centerXAnchor == scoreLabel.centerXAnchor
+            (scorePromptLabel.bottomAnchor == scoreLabel.topAnchor) - 4
             
-            scorePromptLabel.centerXAnchor.constraint(
-                equalTo: scoreLabel.centerXAnchor
-            ),
-            scorePromptLabel.bottomAnchor.constraint(
-                equalTo: scoreLabel.topAnchor,
-                constant: -4
-            ),
-            
-            scoreCaptionLabel.centerXAnchor.constraint(
-                equalTo: scoreLabel.centerXAnchor
-            ),
-            scoreCaptionLabel.topAnchor.constraint(
-                equalTo: scoreLabel.bottomAnchor,
-                constant: 4
-            ),
-
-        ])
+            scoreCaptionLabel.centerXAnchor == scoreLabel.centerXAnchor
+            (scoreCaptionLabel.topAnchor == scoreLabel.bottomAnchor) + 4
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

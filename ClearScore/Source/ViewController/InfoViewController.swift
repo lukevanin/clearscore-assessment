@@ -152,6 +152,8 @@ final class InfoViewController: UIViewController {
         vibrancyView.contentView.addSubview(layoutView)
         view.addSubview(guageIndicatorView)
         
+        // We use the standard `NSLayoutConstraint.activate` here as an example of how this is done normally without
+        // the result builder.
         NSLayoutConstraint.activate([
             
             blurView.leftAnchor.constraint(

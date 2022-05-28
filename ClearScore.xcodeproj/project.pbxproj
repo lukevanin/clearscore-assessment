@@ -54,6 +54,8 @@
 		FCFBFA75284273F2009B13A7 /* ToastModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA74284273F2009B13A7 /* ToastModuleBuilder.swift */; };
 		FCFBFA77284274AA009B13A7 /* ApplicationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */; };
 		FCFBFA79284276DE009B13A7 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA78284276DE009B13A7 /* PassthroughView.swift */; };
+		FCFBFA7E2842B863009B13A7 /* LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA7D2842B863009B13A7 /* LayoutExtensions.swift */; };
+		FCFBFA802842BB42009B13A7 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA7F2842BB42009B13A7 /* Transformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModuleBuilder.swift; sourceTree = "<group>"; };
 		FCFBFA78284276DE009B13A7 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		FCFBFA7B28429F20009B13A7 /* score-light-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "score-light-portrait.png"; sourceTree = "<group>"; };
+		FCFBFA7D2842B863009B13A7 /* LayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutExtensions.swift; sourceTree = "<group>"; };
+		FCFBFA7F2842BB42009B13A7 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,10 +279,10 @@
 		FCFBFA2728422F23009B13A7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */,
 				FCFBFA2B28422F23009B13A7 /* LoadingViewController.swift */,
 				FCFBFA2928422F23009B13A7 /* ReportViewController.swift */,
 				FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */,
+				FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */,
 				FCFBFA6C284264E0009B13A7 /* ToastViewController.swift */,
 				FCFBFA6E284265C9009B13A7 /* AbstractViewModelViewController.swift */,
 			);
@@ -302,6 +306,7 @@
 				FCFBFA3528422F23009B13A7 /* VideoView.swift */,
 				FCFBFA70284268E1009B13A7 /* CardView.swift */,
 				FCFBFA78284276DE009B13A7 /* PassthroughView.swift */,
+				FCFBFA7D2842B863009B13A7 /* LayoutExtensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */,
 				FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */,
 				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
+				FCFBFA7F2842BB42009B13A7 /* Transformer.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -512,12 +518,14 @@
 				FCFBFA3928422F23009B13A7 /* ProductionEnvironmentBuilder.swift in Sources */,
 				FCFBFA3628422F23009B13A7 /* LoadingModuleBuilder.swift in Sources */,
 				FCFBF9E228422EF4009B13A7 /* AppDelegate.swift in Sources */,
+				FCFBFA7E2842B863009B13A7 /* LayoutExtensions.swift in Sources */,
 				FCFBFA75284273F2009B13A7 /* ToastModuleBuilder.swift in Sources */,
 				FCFBFA7328427258009B13A7 /* UserMessage.swift in Sources */,
 				FCFBFA77284274AA009B13A7 /* ApplicationModuleBuilder.swift in Sources */,
 				FCFBFA4928422F23009B13A7 /* ScoreWebRepository.swift in Sources */,
 				FCFBFA4628422F23009B13A7 /* ReportViewController.swift in Sources */,
 				FCFBFA4A28422F23009B13A7 /* MockScoreRepository.swift in Sources */,
+				FCFBFA802842BB42009B13A7 /* Transformer.swift in Sources */,
 				FCFBFA3E28422F23009B13A7 /* Percentage.swift in Sources */,
 				FCFBFA4728422F23009B13A7 /* InfoViewController.swift in Sources */,
 				FCFBFA6F284265C9009B13A7 /* AbstractViewModelViewController.swift in Sources */,

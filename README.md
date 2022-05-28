@@ -11,7 +11,7 @@ Some features which this sample demonstrates:
 - Finite State Machine design pattern. 
 - Composite builder pattern to create flexible view controller hierarchy.
 - Type-safe and reusable networking component for loading and deserializing JSON content from a remote web service.
-- Custom CoreAnimation.
+- Convenient expression syntax for composing autolayout constraints.
 
 ## Notes:
 
@@ -54,6 +54,9 @@ score information.
 this app the `ScoreWebRepository` fetches score data from the backend. Repositories are often used to provide data 
 to models.  
 
+- `Transformers` convert one type of data to another, such as converting a model into a view model. Encapsulating 
+the process allows for the conversion to be tested independently of its use case. 
+
 Code is organised into folders according to its function. 
 
 `/App`: Contains the standard `AppDelegate` and `SceneDelegate`. The `Environment` class acts as a service locator or
@@ -77,6 +80,49 @@ data types for representing values such as `Percentage` and `Currency`.
 web API.
 
 `/Networking`: Defines interfaces and implementations for accessing resources over the network.
+
+### Auto-layout
+
+The `LayoutExtensions` file provides syntax to make programmatic auto-layout less verbose:
+
+- Use `constraints { }` result builder to conveniently activate multiple constraints, instead of using `isActive` 
+or `NSLayoutConstraint.activate`. 
+- Use `==`, `>=`, `<=` create `equalTo`, `greaterThanOrEqualTo` and `lessThanOrEqualTo` layout constraints.
+- Use `+` and `-` to define the `constant` variable on layout constraints.
+- Use `*` to define the `multiplier` constant on layout constraints.
+
+Example:
+
+Instead of this...
+
+```
+NSLayoutConstraint.activate([
+    guageTrackView.widthAnchor.constraint(
+        equalToConstant: 200
+    ),
+    guageTrackView.heightAnchor.constraint(
+        equalTo: guageTrackView.widthAnchor
+    ),
+    guageTrackView.topAnchor.constraint(
+        equalTo: titleLabel.bottomAnchor,
+        constant: 32
+    ),
+    guageTrackView.centerXAnchor.constraint(
+        equalTo: blurView.centerXAnchor
+    )
+])
+```  
+
+...do this...
+
+```
+constraints {
+    guageTrackView.widthAnchor == 200
+    guageTrackView.heightAnchor == guageTrackView.widthAnchor
+    (guageTrackView.topAnchor == titleLabel.bottomAnchor) + 32
+    guageTrackView.centerXAnchor == blueView.centerXAnchor
+}
+``` 
 
 ## TODO: 
 

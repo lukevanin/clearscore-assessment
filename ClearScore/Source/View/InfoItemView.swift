@@ -1,7 +1,7 @@
 import UIKit
 
 ///
-/// Displays a caption / label in a horizontal format. Used by the `InfoViewController` component 
+/// Displays a caption / label in a horizontal format. Used by the `InfoViewController` component.
 ///
 final class InfoItemView: UIView {
     
@@ -65,7 +65,6 @@ final class InfoItemView: UIView {
         }()
         addSubview(layoutView)
         NSLayoutConstraint.activate([
-            // heightAnchor.constraint(greaterThanOrEqualToConstant: 48),
             layoutView.leftAnchor.constraint(
                 equalTo: leftAnchor
             ),
