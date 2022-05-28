@@ -44,8 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             logger.warning("Running release standalone")
             #endif
             let builder = EnvironmentBuilder(configurationURL: configurationURL)
-//            environment = try builder.build()
-            environment = TestEnvironmentBuilder().build()
+            environment = try builder.build()
         }
         let builder = ApplicationModuleBuilder(
             content: LoadingModuleBuilder(
