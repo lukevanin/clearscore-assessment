@@ -1,6 +1,15 @@
 import UIKit
+import Combine
 
 final class ReportViewController: UIViewController {
+    
+    enum AccessibilityIdentifiers: String {
+        case scrollIndicatorUp = "report-scroll-indicator-up"
+        case scrollIndicatorDown = "report-scroll-indicator-down"
+        case scrollView = "report-scrollview"
+    }
+    
+    typealias RefreshHandler = () -> Void
     
     private let backgroundView: VideoView = {
         let view = VideoView()
@@ -21,12 +30,20 @@ final class ReportViewController: UIViewController {
     private let upIconImageView: UIImageView = {
         let view = UIImageView(image: UIImage(systemName: "chevron.up"))
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.accessibilityIdentifier = AccessibilityIdentifiers.scrollIndicatorUp.rawValue
         return view
     }()
     
     private let downIconImageView: UIImageView = {
         let view = UIImageView(image: UIImage(systemName: "chevron.down"))
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.accessibilityIdentifier = AccessibilityIdentifiers.scrollIndicatorDown.rawValue
+        return view
+    }()
+    
+    private let refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.tintColor = .white
         return view
     }()
 
@@ -35,6 +52,7 @@ final class ReportViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isPagingEnabled = true
         view.clipsToBounds = false
+        view.accessibilityIdentifier = AccessibilityIdentifiers.scrollView.rawValue
         return view
     }()
     
@@ -47,10 +65,20 @@ final class ReportViewController: UIViewController {
         return view
     }()
     
-    private let viewControllers: [UIViewController]
+    private var refreshCancellable: AnyCancellable?
     
-    init(viewControllers: [UIViewController]) {
+    private let viewControllers: [UIViewController]
+    private let refreshPublisher: AnyPublisher<Void, Never>
+    private let refreshHandler: RefreshHandler
+    
+    init(
+        viewControllers: [UIViewController],
+        refreshPublisher: AnyPublisher<Void, Never>,
+        refreshHandler: @escaping RefreshHandler
+    ) {
         self.viewControllers = viewControllers
+        self.refreshPublisher = refreshPublisher
+        self.refreshHandler = refreshHandler
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -71,6 +99,7 @@ final class ReportViewController: UIViewController {
         backgroundBlurView.contentView.addSubview(scrollView)
         scrollView.addSubview(layoutView)
         scrollView.delegate = self
+        scrollView.refreshControl = refreshControl
         
         NSLayoutConstraint.activate([
             backgroundView.leftAnchor.constraint(
@@ -163,6 +192,8 @@ final class ReportViewController: UIViewController {
             addChild(viewController)
             viewController.didMove(toParent: self)
         }
+        
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -172,7 +203,36 @@ final class ReportViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        cancelRefresh()
+        connectRefreshPublisher()
         setArrowsVisible(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancelRefresh()
+        disconnectRefreshPublisher()
+    }
+    
+    @objc func onRefresh(sender: UIRefreshControl) {
+        refreshHandler()
+    }
+    
+    private func cancelRefresh() {
+        refreshControl.endRefreshing()
+    }
+    
+    private func connectRefreshPublisher() {
+        refreshCancellable = refreshPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in
+                self?.cancelRefresh()
+            }
+    }
+    
+    private func disconnectRefreshPublisher() {
+        refreshCancellable?.cancel()
+        refreshCancellable = nil
     }
 
     private func setArrowsVisible(_ visible: Bool, animated: Bool) {

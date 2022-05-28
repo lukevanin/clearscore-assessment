@@ -1,4 +1,8 @@
 import Foundation
+import OSLog
+
+
+private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
 
 
 ///
@@ -69,8 +73,10 @@ struct JSONHTTPCodableTransport: HTTPCodableTransport {
         )
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        logger.debug("Sending GET request: \(request)")
         let data = try await transport.fetch(request: request)
         let output = try decoder.decode(Output.self, from: data)
+        logger.debug("Received GET response: \(String(describing: output))")
         return output
     }
 }
@@ -99,7 +105,9 @@ struct PassthroughHTTPDataTransport: HTTPDataTransport {
     let session: URLSession
     
     func fetch(request: URLRequest) async throws -> Data {
+        logger.debug("Sending request: \(String(describing: request))")
         let (data, _) = try await session.data(for: request, delegate: nil)
+        logger.debug("Received response: \(String(data: data, encoding: .utf8) ?? String(describing: data))")
         return data
     }
 }

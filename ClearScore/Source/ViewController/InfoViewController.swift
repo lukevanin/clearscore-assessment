@@ -16,7 +16,7 @@ final class InfoViewController: UIViewController {
         }
         
         struct Guage {
-            let ratio: Float
+            let ratio: CGFloat
             let value: String
             let caption: String
         }
@@ -279,7 +279,7 @@ final class InfoViewController: UIViewController {
         debtChangeItemView.content = viewModel.debtChange.value
         creditLimitItemView.caption = viewModel.creditLimit.caption
         creditLimitItemView.content = viewModel.creditLimit.value
-        guageIndicatorView.value = CGFloat(viewModel.creditUtilization.ratio)
+        guageIndicatorView.value = viewModel.creditUtilization.ratio
         guageValueLabel.text = viewModel.creditUtilization.value
         guageCaptionLabel.text = viewModel.creditUtilization.caption
     }

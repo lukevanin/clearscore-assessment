@@ -1,8 +1,6 @@
 import Foundation
 
 ///
-/// Score Data
-///
 /// Credit score and related information or a user.
 ///
 /// See: https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values
@@ -64,15 +62,15 @@ struct ScoreData: Equatable, Decodable {
         let numPositiveScoreFactors: Int
         let numNegativeScoreFactors: Int
         
-        let currentShortTermDebt: Int
-        let currentShortTermCreditLimit: Int
-        let currentShortTermCreditUtilisation: Int
-        let changeInShortTermDebt: Int
+        let currentShortTermDebt: Int?
+        let currentShortTermCreditLimit: Int?
+        let currentShortTermCreditUtilisation: Int?
+        let changeInShortTermDebt: Int?
         
-        let currentLongTermDebt: Int
-        let currentLongTermCreditLimit: Int
-        let currentLongTermCreditUtilisation: Int
-        let changeInLongTermDebt: Int
+        let currentLongTermDebt: Int?
+        let currentLongTermCreditLimit: Int?
+        let currentLongTermCreditUtilisation: Int?
+        let changeInLongTermDebt: Int?
     }
     
     let creditReportInfo: CreditReportInfo

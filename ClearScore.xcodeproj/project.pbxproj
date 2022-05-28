@@ -47,6 +47,13 @@
 		FCFBFA5F28425180009B13A7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA5E28425180009B13A7 /* Endpoint.swift */; };
 		FCFBFA6128425626009B13A7 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */; };
 		FCFBFA63284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA62284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift */; };
+		FCFBFA6D284264E0009B13A7 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA6C284264E0009B13A7 /* ToastViewController.swift */; };
+		FCFBFA6F284265C9009B13A7 /* AbstractViewModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA6E284265C9009B13A7 /* AbstractViewModelViewController.swift */; };
+		FCFBFA71284268E1009B13A7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA70284268E1009B13A7 /* CardView.swift */; };
+		FCFBFA7328427258009B13A7 /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA7228427258009B13A7 /* UserMessage.swift */; };
+		FCFBFA75284273F2009B13A7 /* ToastModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA74284273F2009B13A7 /* ToastModuleBuilder.swift */; };
+		FCFBFA77284274AA009B13A7 /* ApplicationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */; };
+		FCFBFA79284276DE009B13A7 /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA78284276DE009B13A7 /* PassthroughView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +118,14 @@
 		FCFBFA5E28425180009B13A7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		FCFBFA62284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHTTPCodableTransportTests.swift; sourceTree = "<group>"; };
+		FCFBFA6B28426461009B13A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FCFBFA6C284264E0009B13A7 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
+		FCFBFA6E284265C9009B13A7 /* AbstractViewModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewModelViewController.swift; sourceTree = "<group>"; };
+		FCFBFA70284268E1009B13A7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FCFBFA7228427258009B13A7 /* UserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessage.swift; sourceTree = "<group>"; };
+		FCFBFA74284273F2009B13A7 /* ToastModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModuleBuilder.swift; sourceTree = "<group>"; };
+		FCFBFA78284276DE009B13A7 /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +156,7 @@
 		FCFBF9D528422EF4009B13A7 = {
 			isa = PBXGroup;
 			children = (
+				FCFBFA6B28426461009B13A7 /* README.md */,
 				FCFBF9E028422EF4009B13A7 /* ClearScore */,
 				FCFBF9F728422EF6009B13A7 /* ClearScoreTests */,
 				FCFBFA0128422EF6009B13A7 /* ClearScoreUITests */,
@@ -204,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBFA2228422F23009B13A7 /* App */,
+				FCFBFA6828425E75009B13A7 /* Protocols */,
 				FCFBFA1428422F23009B13A7 /* Builder */,
 				FCFBFA2728422F23009B13A7 /* ViewController */,
 				FCFBFA3228422F23009B13A7 /* View */,
@@ -217,14 +234,8 @@
 		FCFBFA1428422F23009B13A7 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBFA1528422F23009B13A7 /* LoadingModuleBuilder.swift */,
-				FCFBFA1628422F23009B13A7 /* LongTermDebtModuleBuilder.swift */,
-				FCFBFA1728422F23009B13A7 /* ReportModuleBuilder.swift */,
-				FCFBFA1828422F23009B13A7 /* ProductionEnvironmentBuilder.swift */,
-				FCFBFA1928422F23009B13A7 /* ScoreModuleBuilder.swift */,
-				FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */,
-				FCFBFA1B28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift */,
-				FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */,
+				FCFBFA6A284260E6009B13A7 /* Environment Builder */,
+				FCFBFA69284260D3009B13A7 /* Module Builder */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 				FCFBFA1F28422F23009B13A7 /* Currency.swift */,
 				FCFBFA2028422F23009B13A7 /* ApplicationConfiguration.swift */,
 				FCFBFA2128422F23009B13A7 /* ScoreModel.swift */,
+				FCFBFA7228427258009B13A7 /* UserMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,10 +255,9 @@
 		FCFBFA2228422F23009B13A7 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBFA2328422F23009B13A7 /* Environment.swift */,
-				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
 				FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */,
 				FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */,
+				FCFBFA2328422F23009B13A7 /* Environment.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 		FCFBFA2528422F23009B13A7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
 				FCFBFA2628422F23009B13A7 /* HTTP.swift */,
 			);
 			path = Networking;
@@ -262,10 +274,12 @@
 		FCFBFA2728422F23009B13A7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */,
-				FCFBFA2928422F23009B13A7 /* ReportViewController.swift */,
 				FCFBFA2A28422F23009B13A7 /* InfoViewController.swift */,
 				FCFBFA2B28422F23009B13A7 /* LoadingViewController.swift */,
+				FCFBFA2928422F23009B13A7 /* ReportViewController.swift */,
+				FCFBFA2828422F23009B13A7 /* ScoreViewController.swift */,
+				FCFBFA6C284264E0009B13A7 /* ToastViewController.swift */,
+				FCFBFA6E284265C9009B13A7 /* AbstractViewModelViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -275,7 +289,6 @@
 			children = (
 				FCFBFA2D28422F23009B13A7 /* ScoreWebRepository.swift */,
 				FCFBFA2E28422F23009B13A7 /* MockScoreRepository.swift */,
-				FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -286,6 +299,8 @@
 				FCFBFA3328422F23009B13A7 /* InfoItemView.swift */,
 				FCFBFA3428422F23009B13A7 /* ArcView.swift */,
 				FCFBFA3528422F23009B13A7 /* VideoView.swift */,
+				FCFBFA70284268E1009B13A7 /* CardView.swift */,
+				FCFBFA78284276DE009B13A7 /* PassthroughView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +321,38 @@
 				FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */,
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		FCFBFA6828425E75009B13A7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA1A28422F23009B13A7 /* BuilderProtocols.swift */,
+				FCFBFA2F28422F23009B13A7 /* RepositoryProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FCFBFA69284260D3009B13A7 /* Module Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA76284274AA009B13A7 /* ApplicationModuleBuilder.swift */,
+				FCFBFA74284273F2009B13A7 /* ToastModuleBuilder.swift */,
+				FCFBFA1528422F23009B13A7 /* LoadingModuleBuilder.swift */,
+				FCFBFA1728422F23009B13A7 /* ReportModuleBuilder.swift */,
+				FCFBFA1928422F23009B13A7 /* ScoreModuleBuilder.swift */,
+				FCFBFA1B28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift */,
+				FCFBFA1628422F23009B13A7 /* LongTermDebtModuleBuilder.swift */,
+			);
+			path = "Module Builder";
+			sourceTree = "<group>";
+		};
+		FCFBFA6A284260E6009B13A7 /* Environment Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA1828422F23009B13A7 /* ProductionEnvironmentBuilder.swift */,
+				FCFBFA1C28422F23009B13A7 /* TestEnvironmentBuilder.swift */,
+			);
+			path = "Environment Builder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,23 +494,30 @@
 				FCFBFA5F28425180009B13A7 /* Endpoint.swift in Sources */,
 				FCFBFA4F28422F23009B13A7 /* VideoView.swift in Sources */,
 				FCFBFA4228422F23009B13A7 /* Environment.swift in Sources */,
+				FCFBFA71284268E1009B13A7 /* CardView.swift in Sources */,
 				FCFBFA4528422F23009B13A7 /* ScoreViewController.swift in Sources */,
 				FCFBFA3C28422F23009B13A7 /* ShortTermDebtModuleBuilder.swift in Sources */,
+				FCFBFA79284276DE009B13A7 /* PassthroughView.swift in Sources */,
 				FCFBFA4E28422F23009B13A7 /* ArcView.swift in Sources */,
 				FCFBFA3928422F23009B13A7 /* ProductionEnvironmentBuilder.swift in Sources */,
 				FCFBFA3628422F23009B13A7 /* LoadingModuleBuilder.swift in Sources */,
 				FCFBF9E228422EF4009B13A7 /* AppDelegate.swift in Sources */,
+				FCFBFA75284273F2009B13A7 /* ToastModuleBuilder.swift in Sources */,
+				FCFBFA7328427258009B13A7 /* UserMessage.swift in Sources */,
+				FCFBFA77284274AA009B13A7 /* ApplicationModuleBuilder.swift in Sources */,
 				FCFBFA4928422F23009B13A7 /* ScoreWebRepository.swift in Sources */,
 				FCFBFA4628422F23009B13A7 /* ReportViewController.swift in Sources */,
 				FCFBFA4A28422F23009B13A7 /* MockScoreRepository.swift in Sources */,
 				FCFBFA3E28422F23009B13A7 /* Percentage.swift in Sources */,
 				FCFBFA4728422F23009B13A7 /* InfoViewController.swift in Sources */,
+				FCFBFA6F284265C9009B13A7 /* AbstractViewModelViewController.swift in Sources */,
 				FCFBFA3A28422F23009B13A7 /* ScoreModuleBuilder.swift in Sources */,
 				FCFBFA4428422F23009B13A7 /* HTTP.swift in Sources */,
 				FCFBFA3828422F23009B13A7 /* ReportModuleBuilder.swift in Sources */,
 				FCFBFA4D28422F23009B13A7 /* InfoItemView.swift in Sources */,
 				FCFBFA3F28422F23009B13A7 /* Currency.swift in Sources */,
 				FCFBFA4028422F23009B13A7 /* ApplicationConfiguration.swift in Sources */,
+				FCFBFA6D284264E0009B13A7 /* ToastViewController.swift in Sources */,
 				FCFBFA3728422F23009B13A7 /* LongTermDebtModuleBuilder.swift in Sources */,
 				FCFBFA3D28422F23009B13A7 /* TestEnvironmentBuilder.swift in Sources */,
 				FCFBFA3B28422F23009B13A7 /* BuilderProtocols.swift in Sources */,

@@ -44,15 +44,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             logger.warning("Running release standalone")
             #endif
             let builder = EnvironmentBuilder(configurationURL: configurationURL)
-            environment = try builder.build()
+//            environment = try builder.build()
+            environment = TestEnvironmentBuilder().build()
         }
-        let builder = LoadingModuleBuilder(
-            module: ReportModuleBuilder(
-                modules: [
-                    ScoreModuleBuilder(),
-                    ShortTermCreditInfoModuleBuilder(),
-                    LongTermCreditInfoModuleBuilder(),
-                ]
+        let builder = ApplicationModuleBuilder(
+            content: LoadingModuleBuilder(
+                module: ReportModuleBuilder(
+                    modules: [
+                        ScoreModuleBuilder(),
+                        ShortTermCreditInfoModuleBuilder(),
+                        LongTermCreditInfoModuleBuilder(),
+                    ]
+                )
             )
         )
         let viewController = try builder.build(environment: environment)

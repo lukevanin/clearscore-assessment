@@ -1,5 +1,8 @@
 import Foundation
 
+///
+/// Craates dependencies configured with static data for testing.
+///
 struct TestEnvironmentBuilder {
     
     func build() -> Environment {
@@ -7,9 +10,10 @@ struct TestEnvironmentBuilder {
             scoreModel: ScoreModel(
                 currency: .zar,
                 scoreRepository: {
+                    // Inject a mock repository with static data.
                     let repository = MockScoreRepository()
                     repository.mockFetchScore = {
-                        ScoreData(
+                        return ScoreData(
                             creditReportInfo: ScoreData.CreditReportInfo(
                                 score: 514,
                                 minScoreValue: 0,

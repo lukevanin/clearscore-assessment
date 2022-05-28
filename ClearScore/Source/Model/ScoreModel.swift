@@ -34,10 +34,10 @@ final class ScoreModel {
         }
         
         struct Credit: Equatable {
-            let debt: Money
-            let limit: Money
-            let change: Money
-            let usage: Percentage
+            let debt: Money?
+            let limit: Money?
+            let change: Money?
+            let usage: Percentage?
         }
         
         let score: Score
@@ -95,16 +95,32 @@ final class ScoreModel {
                 negativeFactorsCount: data.creditReportInfo.numNegativeScoreFactors
             ),
             shortTermCredit: ScoreInfo.Credit(
-                debt: Money(currency: currency, amount: data.creditReportInfo.currentShortTermDebt),
-                limit: Money(currency: currency, amount: data.creditReportInfo.currentShortTermCreditLimit),
-                change: Money(currency: currency, amount: data.creditReportInfo.changeInShortTermDebt),
-                usage: Percentage(value: data.creditReportInfo.currentShortTermCreditUtilisation)
+                debt: data.creditReportInfo.currentShortTermDebt.map {
+                    Money(currency: currency, amount: $0)
+                },
+                limit: data.creditReportInfo.currentShortTermCreditLimit.map {
+                    Money(currency: currency, amount: $0)
+                },
+                change: data.creditReportInfo.changeInShortTermDebt.map {
+                    Money(currency: currency, amount: $0)
+                },
+                usage: data.creditReportInfo.currentShortTermCreditUtilisation.map {
+                    Percentage(value: $0)
+                }
             ),
             longTermCredit: ScoreInfo.Credit(
-                debt: Money(currency: currency, amount: data.creditReportInfo.currentLongTermDebt),
-                limit: Money(currency: currency, amount: data.creditReportInfo.currentLongTermCreditLimit),
-                change: Money(currency: currency, amount: data.creditReportInfo.changeInLongTermDebt),
-                usage: Percentage(value: data.creditReportInfo.currentLongTermCreditUtilisation)
+                debt: data.creditReportInfo.currentLongTermDebt.map {
+                    Money(currency: currency, amount: $0)
+                },
+                limit: data.creditReportInfo.currentLongTermCreditLimit.map {
+                    Money(currency: currency, amount: $0)
+                },
+                change: data.creditReportInfo.changeInLongTermDebt.map {
+                    Money(currency: currency, amount: $0)
+                },
+                usage: data.creditReportInfo.currentLongTermCreditUtilisation.map {
+                    Percentage(value: $0)
+                }
             )
         )
     }

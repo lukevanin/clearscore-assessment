@@ -7,6 +7,13 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
 
 
 final class ScoreViewController: UIViewController {
+    
+    struct ViewModel {
+        let prompt: String
+        let label: String
+        let caption: String
+        let value: CGFloat
+    }
         
     private let scoreTrackView: ArcView = {
         let view = ArcView()
@@ -45,7 +52,6 @@ final class ScoreViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = .preferredFont(forTextStyle: .body)
         view.textColor = .secondaryLabel
-        view.text = NSLocalizedString("credit-score-prompt", comment: "Your credit score is")
         view.alpha = 0
         return view
     }()
@@ -59,11 +65,11 @@ final class ScoreViewController: UIViewController {
         return view
     }()
 
-    private let scoreModel: ScoreModel
-    private var scoreCancellable: AnyCancellable?
+    private let viewModelPublisher: AnyPublisher<ViewModel, Never>
+    private var viewModelCancellable: AnyCancellable?
     
-    init(scoreModel: ScoreModel) {
-        self.scoreModel = scoreModel
+    init(viewModelPublisher: AnyPublisher<ViewModel, Never>) {
+        self.viewModelPublisher = viewModelPublisher
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -73,59 +79,43 @@ final class ScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let blurEffect = UIBlurEffect(style: .systemThinMaterial)
-
-        let containerView: UIVisualEffectView = {
-            let view = UIVisualEffectView(effect: blurEffect)
+        
+        let cardView: CardView = {
+            let view = CardView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.layer.cornerRadius = 16
-            view.layer.masksToBounds = true
-            return view
-        }()
-
-        let contentView: UIVisualEffectView = {
-            let effect = UIVibrancyEffect(blurEffect: blurEffect, style: .fill)
-            let view = UIVisualEffectView(effect: effect)
-            // view.translatesAutoresizingMaskIntoConstraints = false
-            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.contentView.addSubview(scoreTrackView)
+            view.contentView.addSubview(scoreLabel)
+            view.contentView.addSubview(scorePromptLabel)
+            view.contentView.addSubview(scoreCaptionLabel)
             return view
         }()
         
-        containerView.contentView.autoresizesSubviews = true
-        contentView.frame = containerView.bounds
-        
-        view.addSubview(containerView)
-        containerView.contentView.addSubview(contentView)
-        contentView.contentView.addSubview(scoreTrackView)
-        contentView.contentView.addSubview(scoreLabel)
-        contentView.contentView.addSubview(scorePromptLabel)
-        contentView.contentView.addSubview(scoreCaptionLabel)
+        view.addSubview(cardView)
         view.addSubview(scoreIndicatorView)
 
         NSLayoutConstraint.activate([
             
-            containerView.leftAnchor.constraint(
+            cardView.leftAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leftAnchor,
                 constant: +32
             ),
-            containerView.rightAnchor.constraint(
+            cardView.rightAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.rightAnchor,
                 constant: -32
             ),
-            containerView.centerYAnchor.constraint(
+            cardView.centerYAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.centerYAnchor
             ),
-            containerView.heightAnchor.constraint(
-                equalTo: containerView.widthAnchor,
+            cardView.heightAnchor.constraint(
+                equalTo: cardView.widthAnchor,
                 multiplier: 1.3
             ),
 
             scoreTrackView.centerXAnchor.constraint(
-                equalTo: containerView.centerXAnchor
+                equalTo: cardView.centerXAnchor
             ),
             scoreTrackView.centerYAnchor.constraint(
-                equalTo: containerView.centerYAnchor
+                equalTo: cardView.centerYAnchor
             ),
             scoreTrackView.widthAnchor.constraint(
                 equalToConstant: 250
@@ -148,10 +138,10 @@ final class ScoreViewController: UIViewController {
             ),
 
             scoreLabel.centerXAnchor.constraint(
-                equalTo: containerView.centerXAnchor
+                equalTo: cardView.centerXAnchor
             ),
             scoreLabel.centerYAnchor.constraint(
-                equalTo: containerView.centerYAnchor
+                equalTo: cardView.centerYAnchor
             ),
             
             scorePromptLabel.centerXAnchor.constraint(
@@ -177,7 +167,6 @@ final class ScoreViewController: UIViewController {
         super.viewDidAppear(animated)
         logger.debug("view did appear")
         connectScoreModel()
-        updateScore()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -188,37 +177,28 @@ final class ScoreViewController: UIViewController {
     
     // MARK: Score Model
     
-    private func updateScore() {
-        logger.debug("update score")
-        scoreModel.update()
-    }
-    
     private func connectScoreModel() {
-        scoreCancellable = scoreModel.scorePublisher
+        viewModelCancellable = viewModelPublisher
             .receive(on: RunLoop.main)
-            .sink { [weak self] scoreInfo in
-                self?.handleScore(scoreInfo)
+            .sink { [weak self] viewModel in
+                self?.handleViewModel(viewModel)
             }
     }
     
     private func disconnectScoreModel() {
-        scoreCancellable?.cancel()
-        scoreCancellable = nil
+        viewModelCancellable?.cancel()
+        viewModelCancellable = nil
     }
     
-    private func handleScore(_ scoreInfo: ScoreModel.ScoreInfo) {
-        logger.debug("score: \(String(describing: scoreInfo))")
-        scoreLabel.text = scoreInfo.score.value.formatted(.number)
-        let creditScoreRangeFormat = NSLocalizedString("credit-score-range", comment: "Out of %@")
-        scoreCaptionLabel.text = String(format: creditScoreRangeFormat, scoreInfo.score.range.upperBound.formatted(.number))
+    private func handleViewModel(_ viewModel: ViewModel) {
+        logger.debug("score: \(String(describing: viewModel))")
+        scorePromptLabel.text = viewModel.prompt
+        scoreLabel.text = viewModel.label
+        scoreCaptionLabel.text = viewModel.caption
         view.layoutIfNeeded()
-        
-        let scoreLimit = scoreInfo.score.range.upperBound - scoreInfo.score.range.lowerBound
-        let relativeScore = scoreInfo.score.value - scoreInfo.score.range.lowerBound
-        let indicatorValue = CGFloat(relativeScore) / CGFloat(scoreLimit)
-        
+
         UIView.animate(withDuration: 2.0) {
-            self.scoreIndicatorView.value = indicatorValue
+            self.scoreIndicatorView.value = CGFloat(viewModel.value)
         }
         
         UIView.animate(

@@ -29,6 +29,8 @@ struct EnvironmentBuilder {
         )
         let environment = Environment(
             scoreModel: ScoreModel(
+                // We are using a hard-coded currency for the demo. In a real world application the currency would
+                // be specified in the data received from the backend.
                 currency: .zar,
                 scoreRepository: ScoreWebRepository(
                     endpoints: endpoints,

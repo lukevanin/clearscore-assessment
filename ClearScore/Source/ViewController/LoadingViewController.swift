@@ -10,6 +10,8 @@ final class LoadingViewController: UIViewController {
     
     typealias ContentBuilder = () throws -> UIViewController
     
+    typealias ErrorHandler = (Error) -> Void
+    
     enum ViewState {
         case loaded
         case failed(Error)
@@ -36,10 +38,16 @@ final class LoadingViewController: UIViewController {
     private var loadingCancellable: AnyCancellable?
     
     private let loadingPublisher: AnyPublisher<ViewState, Never>
+    private let errorHandler: ErrorHandler
     private let contentBuilder: ContentBuilder
     
-    init(loadingPublisher: AnyPublisher<ViewState, Never>, contentBuilder: @escaping ContentBuilder) {
+    init(
+        loadingPublisher: AnyPublisher<ViewState, Never>,
+        errorHandler: @escaping ErrorHandler,
+        contentBuilder: @escaping ContentBuilder
+    ) {
         self.loadingPublisher = loadingPublisher
+        self.errorHandler = errorHandler
         self.contentBuilder = contentBuilder
         super.init(nibName: nil, bundle: nil)
     }
@@ -83,7 +91,6 @@ final class LoadingViewController: UIViewController {
     }
     
     private func handleViewState(_ viewState: ViewState) {
-        disconnectLoadingPublisher()
         switch viewState {
         
         case .loaded:
@@ -103,6 +110,7 @@ final class LoadingViewController: UIViewController {
             showError(error: error)
             return
         }
+        disconnectLoadingPublisher()
         viewController.willMove(toParent: self)
         addChild(viewController)
         UIView.transition(
@@ -119,6 +127,6 @@ final class LoadingViewController: UIViewController {
     }
     
     private func showError(error: Error) {
-        // TODO: Show error notification
+        errorHandler(error)
     }
 }
