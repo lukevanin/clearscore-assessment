@@ -13,6 +13,19 @@ Some features which this sample demonstrates:
 - Type-safe and reusable networking component for loading and deserializing JSON content from a remote web service.
 - Convenient expression syntax for composing autolayout constraints.
 
+## Building:
+
+1. Clone the repository to your Mac.
+2. Open the workspace in Xcode 13.2 or higher.
+3. Select your device or a suitable simulator. The app was tested on iPhone 13 simulator and an iPhone X device. Your 
+experience may vary depending on your device.
+4. Press play to run the app in debug mode.
+
+## Usage:
+
+- Pull down to refresh.
+- Swipe up and down to scroll to see more information (short and long term credit). 
+
 ## Notes:
 
 - Tests have implemented as an example of how the design facilitates testing, however tests still need to be 
