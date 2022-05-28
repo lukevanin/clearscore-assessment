@@ -46,6 +46,7 @@
 		FCFBFA5D284239EF009B13A7 /* ScoreWebRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */; };
 		FCFBFA5F28425180009B13A7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA5E28425180009B13A7 /* Endpoint.swift */; };
 		FCFBFA6128425626009B13A7 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */; };
+		FCFBFA63284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA62284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreWebRepositoryTests.swift; sourceTree = "<group>"; };
 		FCFBFA5E28425180009B13A7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
+		FCFBFA62284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHTTPCodableTransportTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,9 +170,8 @@
 		FCFBF9F728422EF6009B13A7 /* ClearScoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				FCFBF9F828422EF6009B13A7 /* ScoreModelTests.swift */,
-				FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */,
-				FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */,
+				FCFBFA64284256F2009B13A7 /* Tests */,
+				FCFBFA65284256F7009B13A7 /* Framework */,
 			);
 			path = ClearScoreTests;
 			sourceTree = "<group>";
@@ -287,6 +288,24 @@
 				FCFBFA3528422F23009B13A7 /* VideoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FCFBFA64284256F2009B13A7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBF9F828422EF6009B13A7 /* ScoreModelTests.swift */,
+				FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */,
+				FCFBFA62284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		FCFBFA65284256F7009B13A7 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +479,7 @@
 			files = (
 				FCFBFA5D284239EF009B13A7 /* ScoreWebRepositoryTests.swift in Sources */,
 				FCFBFA6128425626009B13A7 /* XCTestExtensions.swift in Sources */,
+				FCFBFA63284256E9009B13A7 /* JSONHTTPCodableTransportTests.swift in Sources */,
 				FCFBF9F928422EF6009B13A7 /* ScoreModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

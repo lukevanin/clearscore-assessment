@@ -103,3 +103,16 @@ struct PassthroughHTTPDataTransport: HTTPDataTransport {
         return data
     }
 }
+
+
+///
+///
+///
+final class MockHTTPDataTransport: HTTPDataTransport {
+    
+    var mockFetch: ((URLRequest) throws -> Data)!
+    
+    func fetch(request: URLRequest) async throws -> Data {
+        try mockFetch(request)
+    }
+}
