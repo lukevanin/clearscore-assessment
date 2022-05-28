@@ -77,7 +77,20 @@ struct JSONHTTPCodableTransport: HTTPCodableTransport {
 
 
 ///
-/// Passthrough HTTP Data Transport
+/// Mock HTTP codable transport.
+///
+final class MockHTTPCodableTransport: HTTPCodableTransport {
+    
+    var mockGet: ((HTTPGetRequest) throws -> Any)!
+    
+    func get<Output>(request: HTTPGetRequest) async throws -> Output where Output : Decodable {
+        try mockGet(request) as! Output
+    }
+}
+
+
+///
+/// Passthrough HTTP Data Transport.
 ///
 /// Communicates with resources over the network using HTTP. Requests and responses are handled without modification.
 ///

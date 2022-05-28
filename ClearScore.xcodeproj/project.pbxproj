@@ -43,6 +43,9 @@
 		FCFBFA5628422FE3009B13A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5228422FE2009B13A7 /* Localizable.strings */; };
 		FCFBFA5728422FE3009B13A7 /* background-1.mov in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5328422FE3009B13A7 /* background-1.mov */; };
 		FCFBFA5928422FF4009B13A7 /* Configuration-release.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCFBFA5828422FF4009B13A7 /* Configuration-release.plist */; };
+		FCFBFA5D284239EF009B13A7 /* ScoreWebRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */; };
+		FCFBFA5F28425180009B13A7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA5E28425180009B13A7 /* Endpoint.swift */; };
+		FCFBFA6128425626009B13A7 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		FCFBFA5228422FE2009B13A7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FCFBFA5328422FE3009B13A7 /* background-1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "background-1.mov"; sourceTree = "<group>"; };
 		FCFBFA5828422FF4009B13A7 /* Configuration-release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Configuration-release.plist"; sourceTree = "<group>"; };
+		FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreWebRepositoryTests.swift; sourceTree = "<group>"; };
+		FCFBFA5E28425180009B13A7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				FCFBF9F828422EF6009B13A7 /* ScoreModelTests.swift */,
+				FCFBFA5C284239EF009B13A7 /* ScoreWebRepositoryTests.swift */,
+				FCFBFA6028425626009B13A7 /* XCTestExtensions.swift */,
 			);
 			path = ClearScoreTests;
 			sourceTree = "<group>";
@@ -196,11 +204,11 @@
 			children = (
 				FCFBFA2228422F23009B13A7 /* App */,
 				FCFBFA1428422F23009B13A7 /* Builder */,
-				FCFBFA1D28422F23009B13A7 /* Model */,
-				FCFBFA2528422F23009B13A7 /* Networking */,
-				FCFBFA2C28422F23009B13A7 /* Repository */,
-				FCFBFA3228422F23009B13A7 /* View */,
 				FCFBFA2728422F23009B13A7 /* ViewController */,
+				FCFBFA3228422F23009B13A7 /* View */,
+				FCFBFA1D28422F23009B13A7 /* Model */,
+				FCFBFA2C28422F23009B13A7 /* Repository */,
+				FCFBFA2528422F23009B13A7 /* Networking */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBFA2328422F23009B13A7 /* Environment.swift */,
+				FCFBFA5E28425180009B13A7 /* Endpoint.swift */,
 				FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */,
 				FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */,
 			);
@@ -416,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCFBFA4128422F23009B13A7 /* ScoreModel.swift in Sources */,
+				FCFBFA5F28425180009B13A7 /* Endpoint.swift in Sources */,
 				FCFBFA4F28422F23009B13A7 /* VideoView.swift in Sources */,
 				FCFBFA4228422F23009B13A7 /* Environment.swift in Sources */,
 				FCFBFA4528422F23009B13A7 /* ScoreViewController.swift in Sources */,
@@ -448,6 +458,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFBFA5D284239EF009B13A7 /* ScoreWebRepositoryTests.swift in Sources */,
+				FCFBFA6128425626009B13A7 /* XCTestExtensions.swift in Sources */,
 				FCFBF9F928422EF6009B13A7 /* ScoreModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,13 @@ import Foundation
 struct ScoreWebRepository: ScoreRepository {
     
     /// URL of the web service.
-    let creditScoreURL: URL
+    let endpoints: EndpointsProtocol
     
     /// Generic transport used for accessing the web service..
     let transport: HTTPCodableTransport
     
     func fetchScore() async throws -> ScoreData {
-        try await transport.get(request: HTTPGetRequest(url: creditScoreURL))
+        let url = try endpoints.creditScore()
+        return try await transport.get(request: HTTPGetRequest(url: url))
     }
 }

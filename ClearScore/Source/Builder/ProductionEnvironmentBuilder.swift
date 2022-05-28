@@ -17,6 +17,9 @@ struct EnvironmentBuilder {
         let configuration = try ApplicationConfiguration(
             withPropertyList: configurationURL
         )
+        let endpoints = ConfigurationEndpointProvider(
+            configuration: configuration
+        )
         let jsonTransport = JSONHTTPCodableTransport(
             encoder: JSONEncoder(),
             decoder: JSONDecoder(),
@@ -28,7 +31,7 @@ struct EnvironmentBuilder {
             scoreModel: ScoreModel(
                 currency: .zar,
                 scoreRepository: ScoreWebRepository(
-                    creditScoreURL: try configuration.url(for: .creditScore),
+                    endpoints: endpoints,
                     transport: jsonTransport
                 )
             )
