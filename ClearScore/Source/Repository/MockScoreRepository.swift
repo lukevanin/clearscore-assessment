@@ -1,6 +1,6 @@
 import Foundation
 
-struct MockScoreRepository: ScoreRepository {
+final class MockScoreRepository: ScoreRepository {
     
     var mockFetchScore: (() async throws -> ScoreData)!
     

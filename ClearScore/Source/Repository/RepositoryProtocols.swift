@@ -53,9 +53,9 @@ import Foundation
 /// }
 /// ```
 ///
-struct ScoreData: Decodable {
+struct ScoreData: Equatable, Decodable {
     
-    struct CreditReportInfo: Decodable {
+    struct CreditReportInfo: Equatable, Decodable {
         
         let score: Int
         let minScoreValue: Int
@@ -75,8 +75,6 @@ struct ScoreData: Decodable {
         let changeInLongTermDebt: Int
     }
     
-    let accountIDVStatus: String
-    let dashboardStatus: String
     let creditReportInfo: CreditReportInfo
 }
 

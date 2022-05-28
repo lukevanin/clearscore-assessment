@@ -13,11 +13,11 @@ final class ScoreModel {
     ///
     /// Information about the credit rating for a user.
     ///
-    struct ScoreInfo {
+    struct ScoreInfo: Equatable {
         
-        struct Score {
+        struct Score: Equatable {
             
-            enum Band: Int, Decodable {
+            enum Band: Int, Equatable {
                 case veryPoor = 0
                 case poor
                 case fair
@@ -33,7 +33,7 @@ final class ScoreModel {
             let negativeFactorsCount: Int
         }
         
-        struct Credit {
+        struct Credit: Equatable {
             let debt: Money
             let limit: Money
             let change: Money

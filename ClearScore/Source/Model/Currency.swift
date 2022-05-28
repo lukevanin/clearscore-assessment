@@ -1,10 +1,10 @@
 import Foundation
 
-enum Currency: String {
+enum Currency: String, Equatable {
     case zar = "ZAR"
 }
 
-struct Money {
+struct Money: Equatable {
     let currency: Currency
     let amount: Int
     

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Percentage {
+struct Percentage: Equatable {
     let value: Int
     
     func unity() -> Double {

@@ -6,11 +6,10 @@ struct TestEnvironmentBuilder {
         Environment(
             scoreModel: ScoreModel(
                 currency: .zar,
-                scoreRepository: MockScoreRepository(
-                    mockFetchScore: {
+                scoreRepository: {
+                    let repository = MockScoreRepository()
+                    repository.mockFetchScore = {
                         ScoreData(
-                            accountIDVStatus: "PASS",
-                            dashboardStatus: "EXCELLENT",
                             creditReportInfo: ScoreData.CreditReportInfo(
                                 score: 514,
                                 minScoreValue: 0,
@@ -29,7 +28,8 @@ struct TestEnvironmentBuilder {
                             )
                         )
                     }
-                )
+                    return repository
+                }()
             )
         )
     }
