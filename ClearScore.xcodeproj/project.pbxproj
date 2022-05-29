@@ -76,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC872DC52843702000185F41 /* score-dark-portrait.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "score-dark-portrait.PNG"; sourceTree = "<group>"; };
 		FCFBF9DE28422EF4009B13A7 /* ClearScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFBF9E128422EF4009B13A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCFBF9E328422EF4009B13A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -367,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				FCFBFA7B28429F20009B13A7 /* score-light-portrait.png */,
+				FC872DC52843702000185F41 /* score-dark-portrait.PNG */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";

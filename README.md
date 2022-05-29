@@ -4,7 +4,8 @@ By Luke Van In.
 
 Simple demonstration app which displays credit rating information loaded from a web service. 
 
-![Score screen, portrait orientation, light mode](Screenshots/score-light-portrait.png "Score screen")
+![Score screen, portrait orientation, dark mode](Screenshots/score-dark-portrait.png "Score screen (dark)")
+![Score screen, portrait orientation, light mode](Screenshots/score-light-portrait.png "Score screen (light)")
 
 Some features which this sample demonstrates:
 - Model-View-Controller design pattern, using Combine publishers.
